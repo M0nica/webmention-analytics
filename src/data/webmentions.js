@@ -7,7 +7,7 @@ const domain = require('./meta.json').domain
 require('dotenv').config()
 
 // Define Cache Location and API Endpoint
-const CACHE_DIR = 'cache'
+const CACHE_DIR = 'cachetemp'
 const API = 'https://webmention.io/api'
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
