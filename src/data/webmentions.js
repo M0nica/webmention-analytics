@@ -7,7 +7,7 @@ const domain = require('./meta.json').domain
 require('dotenv').config()
 
 // Define Cache Location and API Endpoint
-const CACHE_DIR = 'cachetemp'
+const CACHE_DIR = 'cache'
 const API = 'https://webmention.io/api'
 const TOKEN = process.env.WEBMENTION_IO_TOKEN
 
@@ -29,7 +29,7 @@ async function fetchWebmentions(since, perPage = 10000) {
     }
 
     let url = `${API}/mentions.jf2?domain=${domain}&token=${TOKEN}&per-page=${perPage}`
-   // if (since) url += `&since=${since}`
+    if (since) url += `&since=${since}`
 
     const response = await fetch(url)
     if (response.ok) {
